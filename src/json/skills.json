@@ -2,59 +2,57 @@
   "section_title": "スキル",
   "more_link": "/skills",
   "skills": [
-       {
+    {
       "name": "HTML5",
-      "icon_url": "src/img/スキル/image copy 6.png"
+      "icon_url": "https://my-es-img.oss-ap-northeast-1.aliyuncs.com/skills/html.png"
     },
     {
       "name": "CSS3",
-      "icon_url": "src/img/スキル/image copy 7.png"
+      "icon_url": "https://my-es-img.oss-ap-northeast-1.aliyuncs.com/skills/css.png"
     },
     {
       "name": "JavaScript",
-      "icon_url": "src/img/スキル/image copy.png"   
+      "icon_url": "https://my-es-img.oss-ap-northeast-1.aliyuncs.com/skills/js.png"
     },
     {
       "name": "Vue.js",
-      "icon_url": "src/img/スキル/image copy 2.png"
+      "icon_url": "https://my-es-img.oss-ap-northeast-1.aliyuncs.com/skills/vue.png"
     },
     {
       "name": "Java",
-      "icon_url": "src/img/スキル/image.png"
+      "icon_url": "https://my-es-img.oss-ap-northeast-1.aliyuncs.com/skills/java.png"
     },
     {
       "name": "Spring Boot",
-      "icon_url": "src/img/スキル/image copy 9.png"
+      "icon_url": "https://my-es-img.oss-ap-northeast-1.aliyuncs.com/skills/springboot.png"
     },
     {
-      "name": "My Batis",
-      "icon_url": "src/img/スキル/image copy 10.png"
+      "name": "MyBatis",
+      "icon_url": "https://my-es-img.oss-ap-northeast-1.aliyuncs.com/skills/mybatis.png"
     },
-
     {
       "name": "MySQL",
-      "icon_url": "src/img/スキル/image copy 3.png"
+      "icon_url": "https://my-es-img.oss-ap-northeast-1.aliyuncs.com/skills/mysql.png"
     },
     {
       "name": "Redis",
-      "icon_url": "src/img/スキル/image copy 4.png"
+      "icon_url": "https://my-es-img.oss-ap-northeast-1.aliyuncs.com/skills/redis.png"
     },
     {
       "name": "Docker",
-      "icon_url": "src/img/スキル/image copy 5.png"
+      "icon_url": "https://my-es-img.oss-ap-northeast-1.aliyuncs.com/skills/docker.png"
     },
- 
     {
       "name": "Prompt",
-      "icon_url": "src/img/スキル/image copy 8.png"
+      "icon_url": "https://my-es-img.oss-ap-northeast-1.aliyuncs.com/skills/prompt.png"
     },
-        {
+    {
       "name": "Postman",
-      "icon_url": "src/img/スキル/image copy 11.png"
+      "icon_url": "https://my-es-img.oss-ap-northeast-1.aliyuncs.com/skills/postman.png"
     },
-           {
+    {
       "name": "REST API",
-      "icon_url": "src/img/スキル/image copy 12.png"
+      "icon_url": "https://my-es-img.oss-ap-northeast-1.aliyuncs.com/skills/restapi.png"
     }
   ]
 }
