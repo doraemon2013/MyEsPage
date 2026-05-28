@@ -1,0 +1,36 @@
+{
+  "section_title": "プロジェクト",
+  "more_link": "/projects",
+  "projects": [
+    {
+      "title": "図書管理システム",
+      "thumbnail_url": "https://your-oss-bucket.oss-region.aliyuncs.com/projects/library-system.png",
+      "tags": ["Java", "Spring Boot", "Vue.js", "MySQL"],
+      "description": "図書の貸出・返却・予約・検索・ユーザー管理などの機能を備えたシステムです。",
+      "links": {
+        "project_url": "/projects/library-system",
+        "github_url": "https://github.com/your-username/library-system"
+      }
+    },
+    {
+  "title": "日本賃貸費用評価シミュレーター",
+  "thumbnail_url": "src/img/2/Snipaste_2026-05-28_17-46-39.png",
+  "tags": ["Vue.js", "Vue CLI", "Vue Router", "Vuex", "Vue I18n", "ECharts", "Element UI"],
+  "description": "日本の賃貸物件の実際の費用を総合的に評価するためのシミュレーターです。初期費用（敷金・礼金・仲介手数料等）、月々の固定費用（家賃・管理費・光熱費等）、環境リスク評価（通勤時間・居住適合度スコア等）を計算し、PDFレポートとしてダウンロードすることができます。多言語対応（日本語・中国語・英語・ベトナム語・韓国語・フィリピン語・ネパール語）にも対応しています。",
+  "links": {
+    "project_url": "http://8.130.68.194:8082/#/housing-cost",
+    "github_url": "https://github.com/your-username/japan-housing-cost-simulator"
+  }
+},
+    {
+      "title": "实验室预约与耗材管理系统",
+      "thumbnail_url": "https://your-oss-bucket.oss-region.aliyuncs.com/projects/budget-app.png",
+      "tags": ["Vue.js", "TypeScript", "MySQL", "Chart.js"],
+      "description": "动态管理实验室，并且预约耗材。",
+      "links": {
+        "project_url": "/projects/budget-app",
+        "github_url": "https://github.com/your-username/budget-app"
+      }
+    }
+  ]
+}

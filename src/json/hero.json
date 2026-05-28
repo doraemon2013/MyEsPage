@@ -1,0 +1,130 @@
+{
+  "image_url": "src/img/生成背景图 (4).png",
+  "sections": [
+    {
+      "id": "problem_solving",
+      "tags": ["問題解決", "論理思考", "自走力"],
+      "title": "課題解決が得意",
+      "subtitle": "問題解決能力",
+      "description": "複雑な問題に直面したとき、論理的に分析し、最適な解決策を見つけ出すことができます。自走力があり、独立して作業を進めることができます。",
+      "stats": [
+        { "value": "100+", "label": "バグ修正", "sub_label": "バグ修正" },
+        { "value": "50+", "label": "技術課題", "sub_label": "技術課題" },
+        { "value": "95%", "label": "解決率", "sub_label": "解決率" },
+        { "value": "自主的", "label": "問題発見", "sub_label": "自主発見" }
+      ],
+      "buttons": [
+        { "text": "プロジェクトを見る", "href": "/projects", "primary": true },
+        { "text": "実績", "href": "/achievements", "primary": false }
+      ],
+      "strengths": [
+        "日語対応能力（N1）",
+        "学習意欲が高く、継続できる",
+        "自走力があり、課題解決が得意",
+        "チームで協力して成果を出す",
+        "日本で長期的に働きたい"
+      ],
+      "highlighted_strength": 3
+    },
+    {
+      "id": "continuous_learning",
+      "tags": ["学習", "成長", "技術"],
+      "title": "学び続け、価値を創造する",
+      "subtitle": "Webエンジニア",
+      "description": "日本で長期的にキャリアを築くことを目標に、日々学習と実践を繰り返しています。技術の人の役に立つサービスを開発し、チームと共に成長していきたいです。",
+      "stats": [
+        { "value": "N1", "label": "日本語能力", "sub_label": "日本語能力" },
+        { "value": "精緻で", "label": "技術者", "sub_label": "丁寧なコード" },
+        { "value": "複数プロジェクト", "label": "経験", "sub_label": "複数プロジェクト" },
+        { "value": "日本で", "label": "就職", "sub_label": "安定して勤務" }
+      ],
+      "buttons": [
+        { "text": "プロジェクトを見る", "href": "/projects", "primary": true },
+        { "text": "GitHub", "href": "https://github.com", "primary": false }
+      ],
+      "strengths": [
+        "日語対応能力（N1）",
+        "学習意欲が高く、継続できる",
+        "自走力があり、課題解決が得意",
+        "チームで協力して成果を出す",
+        "日本で長期的に働きたい"
+      ],
+      "highlighted_strength": 1
+    },
+    {
+      "id": "team_collaboration",
+      "tags": ["チーム", "協力", "コミュニケーション"],
+      "title": "チームで成果を出す",
+      "subtitle": "協調性",
+      "description": "多様な背景を持つメンバーと信頼関係を築き、チーム全体のパフォーマンスを最大化します。円滑なコミュニケーションでプロジェクトを成功に導きます。",
+      "stats": [
+        { "value": "10+", "label": "チームプロジェクト", "sub_label": "チームプロジェクト" },
+        { "value": "50+", "label": "ミーティング", "sub_label": "ミーティング" },
+        { "value": "100%", "label": "タスク完了", "sub_label": "タスク完了" },
+        { "value": "積極的", "label": "貢献", "sub_label": "積極的提案" }
+      ],
+      "buttons": [
+        { "text": "プロジェクトを見る", "href": "/projects", "primary": true },
+        { "text": "実績", "href": "/achievements", "primary": false }
+      ],
+      "strengths": [
+        "日語対応能力（N1）",
+        "学習意欲が高く、継続できる",
+        "自走力があり、課題解決が得意",
+        "チームで協力して成果を出す",
+        "日本で長期的に働きたい"
+      ],
+      "highlighted_strength": 3
+    },
+    {
+      "id": "japanese_communication",
+      "tags": ["日本語", "コミュニケーション", "N1"],
+      "title": "日本語で円滑なコミュニケーション",
+      "subtitle": "言語能力",
+      "description": "複雑な技術要件を分かりやすく言語化し、円滑な合意形成を促進します。ビジネスレベルの日本語でのコミュニケーションが可能です。",
+      "stats": [
+        { "value": "JLPT", "label": "N1取得", "sub_label": "日本語能力試験" },
+        { "value": "ビジネス", "label": "日本語", "sub_label": "ビジネスレベル" },
+        { "value": "円滑", "label": "コミュニケーション", "sub_label": "円滑な意思疎通" },
+        { "value": "正確", "label": "技術文書", "sub_label": "正確な文書作成" }
+      ],
+      "buttons": [
+        { "text": "プロジェクトを見る", "href": "/projects", "primary": true },
+        { "text": "履歴書", "href": "/resume", "primary": false }
+      ],
+      "strengths": [
+        "日語対応能力（N1）",
+        "学習意欲が高く、継続できる",
+        "自走力があり、課題解決が得意",
+        "チームで協力して成果を出す",
+        "日本で長期的に働きたい"
+      ],
+      "highlighted_strength": 0
+    },
+    {
+      "id": "growth_potential",
+      "tags": ["成長", "ポテンシャル", "未来"],
+      "title": "未来への成長",
+      "subtitle": "成長可能性",
+      "description": "未経験領域に対しても意欲的に挑戦し、急速に吸収して成果に変えるポテンシャルを持っています。常に新しいことを学び、スキルを向上させ続けます。",
+      "stats": [
+        { "value": "3年", "label": "経験", "sub_label": "開発経験" },
+        { "value": "20+", "label": "技術", "sub_label": "習得技術" },
+        { "value": "常に", "label": "成長", "sub_label": "スキルアップ" },
+        { "value": "目標", "label": "達成", "sub_label": "目標達成" }
+      ],
+      "buttons": [
+        { "text": "プロジェクトを見る", "href": "/projects", "primary": true },
+        { "text": "目標", "href": "/goals", "primary": false }
+      ],
+      "strengths": [
+        "日語対応能力（N1）",
+        "学習意欲が高く、継続できる",
+        "自走力があり、課題解決が得意",
+        "チームで協力して成果を出す",
+        "日本で長期的に働きたい"
+      ],
+      "highlighted_strength": 4
+    }
+  ]
+}

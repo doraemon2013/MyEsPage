@@ -1,0 +1,39 @@
+{
+  "section_title": "学習の軌跡",
+  "timeline": [
+    {
+      "date": "2023.03",
+      "event": "Java学習開始"
+    },
+    {
+      "date": "2023.06",
+      "event": "Spring Boot習得"
+    },
+    {
+      "date": "2023.09",
+      "event": "Web開発学習開始"
+    },
+    {
+      "date": "2024.01",
+      "event": "Vue.js習得"
+    },
+    {
+      "date": "2024.07",
+      "event": "ポートフォリオ公開"
+    },
+    {
+      "date": "2024.07",
+      "event": "放弃学JAVA"
+    }
+  ],
+  "actions": [
+    {
+      "label": "これから",
+      "action_url": null
+    },
+    {
+      "label": "更なる成長へ",
+      "action_url": null
+    }
+  ]
+}

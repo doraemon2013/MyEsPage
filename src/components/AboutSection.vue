@@ -3,33 +3,18 @@
     <div class="container">
       <div class="about-grid">
         <div class="about-card">
-          <h3 class="card-title">自己紹介</h3>
+          <h3 class="card-title">{{ aboutData.about.title }}</h3>
           <div class="about-content">
-            <img src="https://neeko-copilot.bytedance.net/api/text2image?prompt=professional%20asian%20male%20software%20engineer%20portrait%20photo%20formal&image_size=portrait_4_3" alt="プロフィール画像" class="about-image">
+            <img :src="aboutData.about.profile_image" alt="プロフィール画像" class="about-image">
             <div class="about-info">
               <p class="about-text">
-                はじめまして、練潮田（れんちょうでん）です。<br>
-                中国出身で、現在は日本でエンジニアとしてキャリアを目指しています。<br>
-                プログラミングが大好きで、問題解決や新しい技術の学習にやりがいを感じます。<br>
-                チームで働くこと、ユーザーに価値を提供できるサービスを<br>
-                開発したいと考えています。
+                {{ aboutData.about.greeting }}<br>
+                {{ aboutData.about.description }}
               </p>
               <div class="about-details">
-                <div class="detail-item">
-                  <span class="detail-label">年齢</span>
-                  <span class="detail-value">24歳</span>
-                </div>
-                <div class="detail-item">
-                  <span class="detail-label">在住</span>
-                  <span class="detail-value">日本・東京</span>
-                </div>
-                <div class="detail-item">
-                  <span class="detail-label">日本語</span>
-                  <span class="detail-value">N1</span>
-                </div>
-                <div class="detail-item">
-                  <span class="detail-label">就業形態</span>
-                  <span class="detail-value">正社員・技術・人文知識・国際業務（予定）</span>
+                <div class="detail-item" v-for="detail in aboutData.about.details" :key="detail.label">
+                  <span class="detail-label">{{ detail.label }}</span>
+                  <span class="detail-value">{{ detail.value }}</span>
                 </div>
               </div>
             </div>
@@ -37,37 +22,99 @@
         </div>
 
         <div id="contact" class="contact-card">
-          <h3 class="card-title">連絡先</h3>
+          <h3 class="card-title">{{ aboutData.contact.title }}</h3>
           <div class="contact-list">
-            <div class="contact-item">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
-                <polyline points="22,6 12,13 2,6"/>
-              </svg>
-              <span>example@email.com</span>
-            </div>
-            <div class="contact-item">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M15 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
-                <circle cx="12" cy="7" r="4"/>
-              </svg>
-              <span>github.com/example</span>
-            </div>
-            <div class="contact-item">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
-                <circle cx="12" cy="10" r="3"/>
-              </svg>
-              <span>日本・東京</span>
+            <div class="contact-item" v-for="(item, index) in aboutData.contact.items" :key="index">
+              <component :is="getIconComponent(item.type)" />
+              <span class="contact-value">{{ item.value }}</span>
+              <button 
+                v-if="item.type === 'email' || item.type === 'github'"
+                class="copy-btn" 
+                @click="copyToClipboard(item.value)"
+                :class="{ copied: copiedIndex === index }"
+              >
+                {{ copiedIndex === index ? '完了' : 'コピー' }}
+              </button>
             </div>
           </div>
         </div>
       </div>
     </div>
+    
+    <transition name="fade">
+      <div v-if="showToast" class="copy-toast">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M20 6L9 17l-5-5"/>
+        </svg>
+        <span>コピーしました</span>
+      </div>
+    </transition>
   </section>
 </template>
 
 <script setup>
+import { ref, onMounted, h } from 'vue';
+
+const aboutData = ref({
+  about: {
+    title: '自己紹介',
+    profile_image: '',
+    greeting: '',
+    description: '',
+    details: []
+  },
+  contact: {
+    title: '連絡先',
+    items: []
+  }
+});
+
+const jsonModules = import.meta.glob('../json/*.json', { eager: true });
+
+onMounted(() => {
+  if (jsonModules['../json/about.json']) {
+    aboutData.value = jsonModules['../json/about.json'].default;
+  }
+});
+
+const getIconComponent = (type) => {
+  const icons = {
+    email: () => h('svg', { width: '20', height: '20', viewBox: '0 0 24 24', fill: 'none', stroke: 'currentColor', 'stroke-width': '2' }, [
+      h('path', { d: 'M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z' }),
+      h('polyline', { points: '22,6 12,13 2,6' })
+    ]),
+    github: () => h('svg', { width: '20', height: '20', viewBox: '0 0 24 24', fill: 'none', stroke: 'currentColor', 'stroke-width': '2' }, [
+      h('path', { d: 'M15 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2' }),
+      h('circle', { cx: '12', cy: '7', r: '4' })
+    ]),
+    location: () => h('svg', { width: '20', height: '20', viewBox: '0 0 24 24', fill: 'none', stroke: 'currentColor', 'stroke-width': '2' }, [
+      h('path', { d: 'M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z' }),
+      h('circle', { cx: '12', cy: '10', r: '3' })
+    ])
+  };
+  return icons[type] || icons.location;
+};
+
+const copiedIndex = ref(-1);
+const showToast = ref(false);
+
+const copyToClipboard = async (text) => {
+  try {
+    await navigator.clipboard.writeText(text);
+    copiedIndex.value = aboutData.value.contact.items.findIndex(item => item.value === text);
+    
+    showToast.value = true;
+    setTimeout(() => {
+      showToast.value = false;
+    }, 2000);
+    
+    setTimeout(() => {
+      copiedIndex.value = -1;
+    }, 2000);
+  } catch (err) {
+    console.error('Failed to copy:', err);
+  }
+};
 </script>
 
 <style scoped>
@@ -164,8 +211,77 @@
   font-size: 14px;
 }
 
+.contact-value {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
 .contact-item svg {
   color: #6b7280;
   flex-shrink: 0;
+}
+
+.copy-btn {
+  padding: 6px 12px;
+  background: #f3f4f6;
+  border: none;
+  border-radius: 6px;
+  color: #6b7280;
+  cursor: pointer;
+  transition: all 0.2s;
+  flex-shrink: 0;
+  min-width: 56px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.copy-btn:hover {
+  background: #e5e7eb;
+  color: #374151;
+}
+
+.copy-btn.copied {
+  background: #dcfce7;
+  color: #16a34a;
+}
+
+.copy-toast {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #1f2937;
+  color: white;
+  padding: 16px 24px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 14px;
+  font-weight: 500;
+  z-index: 1000;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+}
+
+.copy-toast svg {
+  color: #10b981;
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(0.9);
 }
 </style>

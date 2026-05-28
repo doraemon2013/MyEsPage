@@ -2,23 +2,29 @@
   <section id="timeline" class="timeline">
     <div class="container">
       <div class="section-header">
-        <h2 class="section-title">学習の軌跡</h2>
+        <h2 class="section-title">{{ historyData.section_title }}</h2>
       </div>
       <div class="timeline-content">
         <div class="timeline-items">
-          <div class="timeline-item" v-for="(item, index) in timelineItems" :key="index">
+          <div class="timeline-item" v-for="(item, index) in historyData.timeline" :key="index">
             <div class="timeline-dot">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <circle cx="12" cy="12" r="10"/>
               </svg>
             </div>
             <div class="timeline-date">{{ item.date }}</div>
-            <div class="timeline-title">{{ item.title }}</div>
+            <div class="timeline-title">{{ item.event }}</div>
           </div>
         </div>
         <div class="timeline-actions">
-          <button class="timeline-btn">これから</button>
-          <button class="timeline-btn">更なる成長へ</button>
+          <button 
+            v-for="(action, index) in historyData.actions" 
+            :key="index" 
+            class="timeline-btn"
+            @click="handleAction(action.action_url)"
+          >
+            {{ action.label }}
+          </button>
         </div>
       </div>
     </div>
@@ -26,13 +32,27 @@
 </template>
 
 <script setup>
-const timelineItems = [
-  { date: "2023.03", title: "Java学習開始" },
-  { date: "2023.06", title: "Spring Boot習得" },
-  { date: "2023.09", title: "Web開発学習開始" },
-  { date: "2024.01", title: "Vue.js習得" },
-  { date: "2024.07", title: "ポートフォリオ公開" },
-];
+import { ref, onMounted } from 'vue';
+
+const historyData = ref({
+  section_title: '学習の軌跡',
+  timeline: [],
+  actions: []
+});
+
+const jsonModules = import.meta.glob('../json/*.json', { eager: true });
+
+onMounted(() => {
+  if (jsonModules['../json/learning-history.json']) {
+    historyData.value = jsonModules['../json/learning-history.json'].default;
+  }
+});
+
+const handleAction = (url) => {
+  if (url) {
+    window.location.href = url;
+  }
+};
 </script>
 
 <style scoped>

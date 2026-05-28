@@ -2,13 +2,13 @@
   <section id="skills" class="skills">
     <div class="container">
       <div class="section-header">
-        <h2 class="section-title">スキル</h2>
-        <a href="#" class="section-link">もっと見る →</a>
+        <h2 class="section-title">{{ skillData.section_title }}</h2>
+        <a :href="skillData.more_link" class="section-link" target="_blank" rel="noopener noreferrer">もっと見る →</a>
       </div>
       <div class="skills-grid">
-        <div class="skill-item" v-for="skill in skills" :key="skill.name">
-          <div class="skill-icon" :style="{ background: skill.bgColor }">
-            <img :src="skill.icon" :alt="skill.name" />
+        <div class="skill-item" v-for="skill in skillData.skills" :key="skill.name">
+          <div class="skill-icon">
+            <img :src="encodeURI(skill.icon_url)" :alt="skill.name" :title="skill.name" />
           </div>
           <div class="skill-name">{{ skill.name }}</div>
         </div>
@@ -18,18 +18,21 @@
 </template>
 
 <script setup>
-const skills = [
-  { name: "Java", icon: "https://neeko-copilot.bytedance.net/api/text2image?prompt=Java%20programming%20language%20logo%20orange%20cup%20simple%20icon&image_size=square", bgColor: "#f87171" },
-  { name: "Spring Boot", icon: "https://neeko-copilot.bytedance.net/api/text2image?prompt=Spring%20Boot%20framework%20logo%20green%20leaf%20simple%20icon&image_size=square", bgColor: "#4ade80" },
-  { name: "Vue.js", icon: "https://neeko-copilot.bytedance.net/api/text2image?prompt=Vue.js%20framework%20logo%20green%20V%20letter%20simple%20icon&image_size=square", bgColor: "#4ade80" },
-  { name: "MySQL", icon: "https://neeko-copilot.bytedance.net/api/text2image?prompt=MySQL%20database%20logo%20orange%20dolphin%20simple%20icon&image_size=square", bgColor: "#fb923c" },
-  { name: "Redis", icon: "https://neeko-copilot.bytedance.net/api/text2image?prompt=Redis%20database%20logo%20red%20circle%20simple%20icon&image_size=square", bgColor: "#ef4444" },
-  { name: "Docker", icon: "https://neeko-copilot.bytedance.net/api/text2image?prompt=Docker%20container%20logo%20blue%20whale%20simple%20icon&image_size=square", bgColor: "#3b82f6" },
-  { name: "HTML5", icon: "https://neeko-copilot.bytedance.net/api/text2image?prompt=HTML5%20logo%20orange%20shield%20simple%20icon&image_size=square", bgColor: "#fb923c" },
-  { name: "CSS3", icon: "https://neeko-copilot.bytedance.net/api/text2image?prompt=CSS3%20logo%20blue%20shield%20simple%20icon&image_size=square", bgColor: "#3b82f6" },
-  { name: "JavaScript", icon: "https://neeko-copilot.bytedance.net/api/text2image?prompt=JavaScript%20logo%20yellow%20shield%20simple%20icon&image_size=square", bgColor: "#fbbf24" },
-  { name: "TypeScript", icon: "https://neeko-copilot.bytedance.net/api/text2image?prompt=TypeScript%20logo%20blue%20TS%20letter%20simple%20icon&image_size=square", bgColor: "#3b82f6" },
-];
+import { ref, onMounted } from 'vue';
+
+const skillData = ref({
+  section_title: 'スキル',
+  more_link: '/skills',
+  skills: []
+});
+
+const jsonModules = import.meta.glob('../json/*.json', { eager: true });
+
+onMounted(() => {
+  if (jsonModules['../json/skills.json']) {
+    skillData.value = jsonModules['../json/skills.json'].default;
+  }
+});
 </script>
 
 <style scoped>
@@ -71,7 +74,7 @@ const skills = [
 
 .skills-grid {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
   gap: 24px;
 }
 
@@ -102,10 +105,9 @@ const skills = [
 }
 
 .skill-icon img {
-  width: 40px;
-  height: 40px;
-  object-fit: contain;
-  filter: brightness(0) invert(1);
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .skill-name {

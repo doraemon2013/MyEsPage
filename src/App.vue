@@ -4,6 +4,7 @@
     <main>
       <HeroSection />
       <SkillSection />
+      <PersonalQualitySection />
       <ProjectSection />
       <TimelineSection />
       <AboutSection />
@@ -16,6 +17,7 @@
 import NavBar from './components/NavBar.vue';
 import HeroSection from './components/HeroSection.vue';
 import SkillSection from './components/SkillSection.vue';
+import PersonalQualitySection from './components/PersonalQualitySection.vue';
 import ProjectSection from './components/ProjectSection.vue';
 import TimelineSection from './components/TimelineSection.vue';
 import AboutSection from './components/AboutSection.vue';

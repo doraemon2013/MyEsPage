@@ -1,0 +1,79 @@
+{
+  "section_title": "個人の強み",
+  "description": "プロジェクト開発を通じて培ったスキルと、日々の学習で磨いた能力です。チームでの協力や問題解決に積極的に取り組み、常に成長を目指しています。",
+  "abilities": [
+    {
+      "id": "continuous_learning",
+      "label": "継続学習力",
+      "description": "技術の進化を追い続け、新しい知識を習慣的に習得する力。",
+      "images": [
+        "src/img/1/微信图片_20260513103704_61_7.jpg",
+        "src/img/1/ChatGPT Image 2026年5月13日 09_58_58.png",
+        "src/img/1/ChatGPT Image 2026年5月13日 19_48_57.png"
+      ]
+    },
+    {
+      "id": "stability",
+      "label": "安定性",
+      "description": "予期せぬトラブルに対しても冷静さを保ち、堅実なアウトプットを継続する力。",
+      "images": [
+        "https://oss.example.com/portfolio/strengths/stability-01.png"
+      ]
+    },
+    {
+      "id": "proactivity",
+      "label": "主体性",
+      "description": "指示を待つだけでなく、課題を自ら見つけ出し能動的に改善案を提案・実行する力。",
+      "images": [
+        "https://oss.example.com/portfolio/strengths/proactivity-01.png"
+      ]
+    },
+    {
+      "id": "japanese_communication",
+      "label": "日本語コミュニケーション能力",
+      "description": "複雑な技術要件を分かりやすく言語化し、円滑な合意形成を促進する力。",
+      "images": [
+        "https://oss.example.com/portfolio/strengths/communication-01.png",
+        "https://oss.example.com/portfolio/strengths/communication-02.png"
+      ]
+    },
+    {
+      "id": "practical_skill",
+      "label": "実践力",
+      "description": "理論だけでなく、実際の開発現場でコードに落とし込み、動くシステムを構築する力。",
+      "images": [
+        "https://oss.example.com/portfolio/strengths/practical-skill-01.png"
+      ]
+    },
+    {
+      "id": "growth_potential",
+      "label": "成長可能性",
+      "description": "未経験領域に対しても意欲的に挑戦し、急速に吸収して成果に変えるポテンシャル。",
+      "images": []
+    },
+    {
+      "id": "team_cooperation",
+      "label": "チーム協調性",
+      "description": "多様な背景を持つメンバーと信頼関係を築き、チーム全体のパフォーマンスを最大化する力。",
+      "images": [
+        "https://oss.example.com/portfolio/strengths/team-cooperation-01.png"
+      ]
+    },
+    {
+      "id": "interest_in_tech",
+      "label": "技術への興味",
+      "description": "最新技術のトレンドを常にアンテナ高く捉え、ビジネスへの活用可能性を探求する好奇心。",
+      "images": [
+        "https://oss.example.com/portfolio/strengths/tech-interest-01.png"
+      ]
+    },
+    {
+      "id": "engineering_curiosity",
+      "label": "エンジニアリング探究心",
+      "description": "システムの裏側の仕組みまで深く掘り下げ、本質的な最適化を追求するエンジニア魂。",
+      "images": [
+        "https://oss.example.com/portfolio/strengths/engineering-curiosity-01.png"
+      ]
+    }
+  ]
+}
