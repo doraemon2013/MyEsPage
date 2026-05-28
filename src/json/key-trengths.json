@@ -72,7 +72,11 @@
       "label": "エンジニアリング探究心",
       "description": "システムの裏側の仕組みまで深く掘り下げ、本質的な最適化を追求するエンジニア魂。",
       "images": [
-        "https://oss.example.com/portfolio/strengths/engineering-curiosity-01.png"
+              "https://my-es-img.oss-ap-northeast-1.aliyuncs.com/key-trengths/3d77239f07380d14fb84670bf67f0394.jpg",
+              "https://my-es-img.oss-ap-northeast-1.aliyuncs.com/key-trengths/4c3e73368ff18e212d031bb4697d762c.jpg",
+              "https://my-es-img.oss-ap-northeast-1.aliyuncs.com/key-trengths/56da11666f0be3467779d57a24f6b116.jpg",
+              "https://my-es-img.oss-ap-northeast-1.aliyuncs.com/key-trengths/5706ffd0e43de40843ac89b7f671ad94.jpg",
+              "https://my-es-img.oss-ap-northeast-1.aliyuncs.com/key-trengths/9651bcbdf8e68406deefae8f4728b868.jpg"
       ]
     }
   ]
